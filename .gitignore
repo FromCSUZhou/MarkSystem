@@ -1,0 +1,4 @@
+# 忽略生成的数据文件
+./data/*/*.json
+./data/*/*.csv
+./data/*/*.tsv
