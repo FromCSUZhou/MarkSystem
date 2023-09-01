@@ -1,4 +1,7 @@
 # 忽略生成的数据文件
-./data/*/*.json
-./data/*/*.csv
-./data/*/*.tsv
+data/*/*.json
+data/*/*.csv
+data/*/*.tsv
+
+# 忽略本地配置文件
+.idea
