@@ -3,7 +3,6 @@ import os
 import json
 import datetime
 from utils import json_operation
-import awesome_streamlit as ast
 
 def write():
     init()
