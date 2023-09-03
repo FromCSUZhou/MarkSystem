@@ -1,7 +1,7 @@
 import os
 import tempfile
 from langchain.embeddings.openai import OpenAIEmbeddings
-from langchain.text_splitter import CharacterTextSplitter
+from langchain.text_splitter import CharacterTextSplitter, RecursiveCharacterTextSplitter
 from langchain.vectorstores import Chroma
 from langchain.document_loaders import PyPDFLoader
 import re
@@ -28,9 +28,10 @@ def process_file(uploaded_file):
     print(type(documents))
     print("这个地方是documents")
     print(len(documents))
+    print(documents[0])
 
     # 进行文本分割
-    text_splitter = CharacterTextSplitter(chunk_size=300, chunk_overlap=50)
+    text_splitter = RecursiveCharacterTextSplitter(chunk_size=300, chunk_overlap=50)
     split_docs = text_splitter.split_documents(documents)
     print(type(split_docs))
     print("这个地方是split_docs")
@@ -46,7 +47,7 @@ if uploaded_file is not None:
     # Load embeddings model
     embeddings = OpenAIEmbeddings(openai_api_key=api_keys)
     pdfsearch = Chroma.from_documents(documents, embeddings)
-    retriever = pdfsearch.as_retriever(search_kwargs={"k": 15})
+    retriever = pdfsearch.as_retriever(search_kwargs={"k": 10})
     st.success("文件已读取")
 
 # def render_file(file):
@@ -71,11 +72,12 @@ def main():
         end = page * results_per_page
 
         for match in data[start:end]:
-            print(match)
-            # with st.expander(f'**{match.metadata["source"]}**'):
-            #     lines = match.page_content.split("\n")
-            #     for line in lines:
-            #         key, value = line.split(":", 1)
+            # print(match)
+            with st.expander(f'**{match.metadata["page"]}**'):
+                # lines = match.page_content.split("\n")
+                # for line in lines:
+                #     key, value = line.split(":", 1)
+                st.markdown(match.page_content)
 
 if "shared" not in st.session_state:
     st.error("请在Home页输入邮箱")
