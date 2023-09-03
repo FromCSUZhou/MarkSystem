@@ -5,7 +5,7 @@ import numpy as np
 import pandas as pd
 import streamlit as st
 
-def write():
+def main():
     MODEL_CONFIG = {
         'model_name': 'uer/gpt2-chinese-cluecorpussmall',  # backbone
         'device': 'cuda:0',  # 使用设备
@@ -163,3 +163,6 @@ def write():
             columns=([f'rank {i + 1}' for i in range(MODEL_CONFIG['rank_list_len'])])
         )
         st.dataframe(df)
+
+if __name__ == '__main__':
+    main()

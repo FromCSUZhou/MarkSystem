@@ -6,7 +6,7 @@ def reload_session(json_data:dict, cur_file):
     for k,v in json_data.items():
         st.session_state[k] = v
     st.session_state['cur_file'] = cur_file
-def write():
+def main():
     global click_flag
     # 指定文件夹路径
     read_path = os.path.join("data", "qa")
@@ -41,3 +41,5 @@ def write():
             st.success('打标成功！')
             click_flag = False
 
+if __name__ == '__main__':
+    main()

@@ -1,10 +1,8 @@
 import streamlit as st
 import os
-import json
-import datetime
 from utils import json_operation
 
-def write():
+def main():
     init()
     st.info('标题和行业每份研报都一样，注：分析一份新研报时记得修改')
     title = st.text_input('Title (研报文件名)', st.session_state['collection_title'])
@@ -48,6 +46,7 @@ def init():
     if 'collection_instruction' not in st.session_state:
         st.session_state['collection_instruction'] = '请你'
 
-
+if __name__ == '__main__':
+    main()
 
 

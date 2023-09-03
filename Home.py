@@ -64,7 +64,7 @@ else:
 
 
 st.info("""
-这里插入介绍打标系统的内容及使用说明，\n
+这里将插入介绍打标系统的内容及使用说明\n
 权限说明：checker > labeler \n
 checker比labeler多一个页面展示（数据审核页面）\n
 \n
