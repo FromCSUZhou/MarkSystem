@@ -73,7 +73,7 @@ def main():
 
         for match in data[start:end]:
             # print(match)
-            with st.expander(f'**{"页码：" + match.metadata["page"]}**'):
+            with st.expander(f'**{match.metadata["page"]}**'):
                 # lines = match.page_content.split("\n")
                 # for line in lines:
                 #     key, value = line.split(":", 1)
