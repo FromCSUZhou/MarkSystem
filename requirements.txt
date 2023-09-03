@@ -1,7 +1,6 @@
 streamlit
 openai
 numpy
-pandas
 langchain == 0.0.263
 chromadb == 0.3.26
 pypdf
