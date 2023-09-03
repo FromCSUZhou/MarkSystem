@@ -67,6 +67,7 @@ st.info("""
 TodoList:\n
 - [ ] 1. 分别测试打标系统不同页面并优化\n
 - [ ] 2. 插入打标系统使用说明\n
+- [ ] 3. 关于RLHF页面，需要等模型微调好之后再接入模型\n
 权限说明：checker > labeler \n
 checker比labeler多一个页面展示（数据审核页面）\n
 \n
