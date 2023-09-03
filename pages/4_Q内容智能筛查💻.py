@@ -73,11 +73,13 @@ def main():
 
         for match in data[start:end]:
             # print(match)
-            with st.expander(f'**{match.metadata["page"]}**'):
+            with st.expander(f'**{"页码：" + match.metadata["page"]}**'):
                 # lines = match.page_content.split("\n")
                 # for line in lines:
                 #     key, value = line.split(":", 1)
+                st.info("下面是语义搜索到的正文：（可以复制至pdf中进行搜索与匹配）")
                 st.markdown(match.page_content)
+        st.write(f"Page {page} of {num_pages}")
 
 if "shared" not in st.session_state:
     st.error("请在Home页输入邮箱")
