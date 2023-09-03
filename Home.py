@@ -64,6 +64,9 @@ else:
 
 
 st.info("""
+实验账号：
+- checker:checker@hku.hk
+- labeler:labeler@hku.hk
 TodoList:\n
 - [ ] 1. 分别测试打标系统不同页面并优化\n
 - [ ] 2. 插入打标系统使用说明\n
