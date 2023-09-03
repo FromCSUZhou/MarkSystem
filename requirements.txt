@@ -3,5 +3,5 @@ openai
 numpy
 pandas
 langchain
-chromadb
+chromadb == 0.3.26
 pypdf
