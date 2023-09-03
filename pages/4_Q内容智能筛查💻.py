@@ -47,7 +47,7 @@ if uploaded_file is not None:
     # Load embeddings model
     embeddings = OpenAIEmbeddings(openai_api_key=api_keys)
     pdfsearch = Chroma.from_documents(documents, embeddings)
-    retriever = pdfsearch.as_retriever(search_kwargs={"k": 10})
+    retriever = pdfsearch.as_retriever(search_kwargs={"k": 15})
     st.success("文件已读取")
 
 # def render_file(file):
