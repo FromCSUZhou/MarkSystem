@@ -4,3 +4,4 @@ numpy
 pandas
 langchain
 chromadb == 0.3.26
+pypdf
