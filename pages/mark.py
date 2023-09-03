@@ -44,8 +44,3 @@ def write():
             st.success('打标成功！')
             click_flag = False
 
-
-
-
-
-
