@@ -27,11 +27,15 @@ def process_file(uploaded_file):
     os.unlink(temp_file.name)
     print(type(documents))
     print("这个地方是documents")
-    print(documents)
+    print(len(documents))
 
     # 进行文本分割
     text_splitter = CharacterTextSplitter(chunk_size=300, chunk_overlap=50)
     split_docs = text_splitter.split_documents(documents)
+    print(type(split_docs))
+    print("这个地方是split_docs")
+    print(len(split_docs))
+    print(split_docs[0])
 
     return split_docs, file_name
 
