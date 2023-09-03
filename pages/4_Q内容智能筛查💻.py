@@ -4,8 +4,6 @@ from langchain.embeddings.openai import OpenAIEmbeddings
 from langchain.text_splitter import CharacterTextSplitter
 from langchain.vectorstores import Chroma
 from langchain.document_loaders import PyPDFLoader
-# import fitz
-# from PIL import Image
 import re
 import streamlit as st
 
