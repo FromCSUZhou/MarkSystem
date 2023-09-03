@@ -46,7 +46,11 @@ def init():
     if 'collection_instruction' not in st.session_state:
         st.session_state['collection_instruction'] = '请你'
 
-if __name__ == '__main__':
+if "shared" not in st.session_state:
+    st.error("请在Home页输入邮箱")
+elif st.session_state.shared:
     main()
+else:
+    st.error("邮箱未激活或已过期")
 
 
