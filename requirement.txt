@@ -1,2 +1,6 @@
 streamlit
 openai~=0.27.8
+numpy
+pandas
+langchain
+chromadb == 0.3.26
