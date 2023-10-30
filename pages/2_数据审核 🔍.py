@@ -1,15 +1,12 @@
 import streamlit as st
 import os
-import json
-import datetime
-import awesome_streamlit as ast
 from utils import json_operation
 click_flag = False
 def reload_session(json_data:dict, cur_file):
     for k,v in json_data.items():
         st.session_state[k] = v
     st.session_state['cur_file'] = cur_file
-def write():
+def main():
     global click_flag
     # 指定文件夹路径
     read_path = os.path.join("data", "qa")
@@ -44,8 +41,9 @@ def write():
             st.success('打标成功！')
             click_flag = False
 
-
-
-
-
-
+if "shared" not in st.session_state:
+    st.error("请在Home页输入邮箱")
+elif st.session_state.shared:
+    main()
+else:
+    st.error("邮箱未激活或已过期")

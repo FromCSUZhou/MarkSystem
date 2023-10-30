@@ -1,0 +1,8 @@
+streamlit
+openai
+numpy
+pandas == 2.0.3
+langchain == 0.0.263
+chromadb == 0.3.26
+pypdf == 3.8.1
+tiktoken == 0.3.3
